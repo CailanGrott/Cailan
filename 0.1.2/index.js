@@ -1,6 +1,6 @@
 let valorCompra = 100;
 let temConvenio = true;
-let temCartaoLoja = false;
+let temCartaoLoja = true;
 
 function validarDesconto(valorCompra, temConvenio, temCartaoLoja) {
   if (temConvenio === true && temCartaoLoja === true) {
