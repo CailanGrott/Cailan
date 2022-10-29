@@ -28,3 +28,24 @@ const filmes = [
     generos: ['Comédia'],
   },
 ];
+
+function Card(props) {}
+
+function retornaArray() {
+  const array = [];
+  filmes.forEach((filme) => {
+    if (filme.oscar === true) {
+      array.push(filme.nome);
+    }
+  });
+  return array;
+}
+
+export default function App() {
+  return (
+    <div className="App">
+      <h2>Título</h2>
+      <h2>{retornaArray()}</h2>
+    </div>
+  );
+}
