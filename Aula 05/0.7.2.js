@@ -1,4 +1,6 @@
-const Personagens = () => {
+import './styles.css';
+
+const Personagens = (props) => {
   const personagens = [
     'Jill Valentine',
     'Claire Redfield',
@@ -7,14 +9,31 @@ const Personagens = () => {
     'Leon S. Kennedy',
     'Albert Wesker',
   ];
+
+  const filtrarPersonagens = personagens.filter((personagem) => {
+    const LastName = personagem.includes(props.lastName);
+
+    return LastName;
+  });
+
   return (
     <div>
-      <h3>Personagens de Resident Evil</h3>
+      <h3>Filtrar personagens de Resident Evil</h3>
       <ul>
-        {personagens.map((personagem) => (
+        {filtrarPersonagens.map((personagem) => (
           <li>{personagem}</li>
         ))}
       </ul>
     </div>
   );
 };
+
+export default function App() {
+  return (
+    <div className="App">
+      <div>
+        <Personagens lastName="Redfield" />;
+      </div>
+    </div>
+  );
+}
